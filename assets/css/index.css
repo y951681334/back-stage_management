@@ -25,10 +25,7 @@ iframe {
   width: 100%;
   line-height: 50px;
   text-align: center;
-}
-
-.userinfo span {
-  display: inline-block;
+  user-select: none;
 }
 
 .layui-nav-img {
@@ -46,4 +43,5 @@ iframe {
   font-size: 20px;
   line-height: 40px;
   text-align: center;
+  color: #fff;
 }
