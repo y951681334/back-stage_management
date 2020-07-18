@@ -22,12 +22,14 @@ $(function () {
 
   $(".reg-box").on("submit", function (e) {
     e.preventDefault();
+    let username = $(".reg-box [name=username]").val();
+    let password = $(".reg-box [name=username]").val();
     $.ajax({
       method: "post",
       url: "/api/reguser",
       data: {
-        username: $(".reg-box [name=username]").val(),
-        password: $(".reg-box [name=username]").val(),
+        username,
+        password,
       },
       success: function (res) {
         if (res.status !== 0) return layer.msg(res.message);
@@ -39,25 +41,22 @@ $(function () {
 
   $(".login-box").on("submit", function (e) {
     e.preventDefault();
+    let username = $(".login-box [name=username]").val();
+    let password = $(".login-box [name=username]").val();
     $.ajax({
       method: "post",
       url: "/api/login",
       data: {
-        username: $(".login-box [name=username]").val(),
-        password: $(".login-box [name=username]").val(),
+        username,
+        password,
       },
       success: function (res) {
-        console.log(res);
         if (res.status !== 0) return layer.msg(res.message);
+
         layer.msg("登录成功！");
         localStorage.setItem("token", res.token);
         location.href = "/index.html";
       },
     });
-  });
-
-  $.ajaxPrefilter(function (options) {
-    console.log(options.url);
-    options.url = "http://ajax.frontend.itheima.net" + options.url;
   });
 });

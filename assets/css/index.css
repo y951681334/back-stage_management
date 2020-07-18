@@ -26,6 +26,7 @@ iframe {
   line-height: 50px;
   text-align: center;
   user-select: none;
+  margin-top: 10px;
 }
 
 .layui-nav-img {
@@ -44,4 +45,10 @@ iframe {
   line-height: 40px;
   text-align: center;
   color: #fff;
+}
+
+.layui-nav-img,
+.welcome,
+.text-avatar {
+  display: none;
 }

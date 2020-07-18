@@ -31,7 +31,7 @@
             </dl>
           </li>
           <li class="layui-nav-item">
-            <a href=""><span class="iconfont icon-tuichu"></span>退出</a>
+            <a href="javascript:;" id="userOut"><span class="iconfont icon-tuichu"></span>退出</a>
           </li>
         </ul>
       </div>
@@ -43,7 +43,7 @@
             <div class="userinfo">
               <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
               <span class="text-avatar">A</span>
-              <span>欢迎 ***</span>
+              <span class="welcome">欢迎 ***</span>
             </div>
             <li class="layui-nav-item">
               <a href="./home/dashboard.html" target="dashboard"
@@ -79,12 +79,17 @@
               <dl class="layui-nav-child">
                 <dd>
                   <a href="javascript:;"
-                    ><i class="layui-icon layui-icon-app"></i>列表一</a
+                    ><i class="layui-icon layui-icon-app"></i>基本资料</a
                   >
                 </dd>
                 <dd>
                   <a href="javascript:;"
-                    ><i class="layui-icon layui-icon-app"></i>列表二</a
+                    ><i class="layui-icon layui-icon-app"></i>更换头像</a
+                  >
+                </dd>
+                <dd>
+                  <a href="javascript:;"
+                    ><i class="layui-icon layui-icon-app"></i>重置密码</a
                   >
                 </dd>
               </dl>
@@ -106,6 +111,9 @@
       </div>
     </div>
     <script src="./assets/lib/layui/layui.all.js"></script>
+    <script src="./assets/lib/jquery.js"></script>
+    <script src="./assets/js/baseAPI.js"></script>
+    <script src="./assets/js/index.js"></script>
     <script>
       //JavaScript代码区域
       layui.use("element", function () {
