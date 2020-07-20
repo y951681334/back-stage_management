@@ -42,7 +42,7 @@ $(function () {
   $(".login-box").on("submit", function (e) {
     e.preventDefault();
     let username = $(".login-box [name=username]").val();
-    let password = $(".login-box [name=username]").val();
+    let password = $(".login-box [name=password]").val();
     $.ajax({
       method: "post",
       url: "/api/login",
