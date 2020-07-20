@@ -33,12 +33,11 @@ function getInfo() {
 }
 
 function setInfo(user) {
-  console.log(user);
   let name = user.nickname || user.username;
   $(".usn").html("欢迎&nbsp&nbsp" + name);
   $(".unn").html(name);
   if (user.user_pic) {
-    $(".layui-nav-img").show();
+    $(".layui-nav-img").prop("src", user.user_pic).show();
     $(".touxiang").hide();
   } else {
     $(".layui-nav-img").hide();

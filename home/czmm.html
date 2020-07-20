@@ -23,13 +23,12 @@
             <div class="layui-input-block">
               <input
                 type="password"
-                name="oldpws"
+                name="oldPwd"
                 required
                 lay-verify="required"
                 placeholder="输入原来密码"
                 autocomplete="off"
                 class="layui-input"
-                readonly
               />
             </div>
           </div>
@@ -38,8 +37,8 @@
             <div class="layui-input-block">
               <input
                 type="password"
-                name="newpws"
-                lay-verify="required|unn"
+                name="newPwd"
+                lay-verify="required|newPwd"
                 placeholder="请输入新的密码"
                 autocomplete="off"
                 class="layui-input"
@@ -51,8 +50,8 @@
             <div class="layui-input-block">
               <input
                 type="password"
-                name="redpws"
-                lay-verify="required|email"
+                name="rePwd"
+                lay-verify="required|rePwd"
                 placeholder="请重复新密码"
                 autocomplete="off"
                 class="layui-input"
@@ -62,9 +61,6 @@
           <div class="layui-input-block">
             <button class="layui-btn" lay-submit lay-filter="formDemo">
               提交修改
-            </button>
-            <button type="reset" class="layui-btn layui-btn-primary">
-              重置
             </button>
           </div>
         </form>
