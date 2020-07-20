@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>1</title>
+    <link rel="stylesheet" href="../assets/lib/layui/css/layui.css" />
+    <link rel="stylesheet" href="../assets/lib/cropper/cropper.css" />
+    <link rel="stylesheet" href="../assets/css/wzlb.css" />
+    <link rel="stylesheet" href="../assets/lib/base.css" />
+  </head>
+  <body>
+    <div class="layui-card">
+      <div class="layui-card-header">
+        <div>文章类别管理</div>
+        <button
+          type="button"
+          class="layui-btn layui-btn-sm layui-btn-norma"
+          id="tjlb"
+        >
+          添加类别
+        </button>
+      </div>
+      <div class="layui-card-body">
+        <table class="layui-table">
+          <colgroup>
+            <col />
+            <col />
+            <col width="200" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>分类名称</th>
+              <th>分类别名</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../assets/lib/jquery.js"></script>
+    <script src="../assets/lib/layui/layui.all.js"></script>
+    <script src="../assets/lib/template-web.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/wzlb.js"></script>
+    <script type="text/html" id="template1">
+      {{each data}}
+        <tr>
+          <td>{{$value.name}}</td>
+          <td>{{$value.alias}}</td>
+          <td>
+            <button type="button" class="layui-btn layui-btn-xs bj" id="{{$value.Id}}">编辑</button>
+            <button type="button" class="layui-btn layui-btn-xs layui-btn-danger sc">删除</button>
+          </td>
+        </tr>
+      {{/each}}
+    </script>
+    <script type="text/html" id="template2">
+      <form class="layui-form" id="tjwz">
+          <div class="layui-form-item">
+            <label class="layui-form-label">分类名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">分类别名</label>
+            <div class="layui-input-block">
+              <input type="text" name="alias" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">添加分类</button>
+              <button class="layui-btn layui-btn-primary" lay-filter="formDemo" id="qx">取消</button>
+            </div>
+          </div>
+       </form>
+    </script>
+    <script type="text/html" id="template3">
+      <form class="layui-form" id="bjwz" lay-filter="form1">
+          <input type="hidden" name="Id">
+          <div class="layui-form-item">
+            <label class="layui-form-label">分类名称</label>
+            <div class="layui-input-block">
+              <input type="text" name="name" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">分类别名</label>
+            <div class="layui-input-block">
+              <input type="text" name="alias" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <button class="layui-btn" lay-submit lay-filter="formDemo">修改分类</button>
+              <button class="layui-btn layui-btn-primary" lay-filter="formDemo" id="qx">取消</button>
+            </div>
+          </div>
+       </form>
+    </script>
+  </body>
+</html>
