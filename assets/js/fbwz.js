@@ -74,7 +74,9 @@ $(function () {
           contentType: false,
           processData: false,
           success: function (res) {
-            console.log(res);
+            if (res.status != 0) return layer.msg("文章发布失败");
+            layer.msg("文章发布成功");
+            $("#form1")[0].reset();
           },
         });
       });
